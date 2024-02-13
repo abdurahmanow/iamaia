@@ -1,0 +1,37 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5eef8;
+    color: #4a4a4a;
+}
+
+.container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+input[type="text"] {
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid #e6e6e6;
+    border-radius: 5px;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff4d6e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff6384;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 18px;
+}

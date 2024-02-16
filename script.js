@@ -28,7 +28,10 @@ document.querySelector('.flatpickr-button').addEventListener('click', function()
     datepicker.open();
 });
 
+// Добавляем обработчик события для кнопки "Открыть"
+document.getElementById('open-button').addEventListener('click', revealMessage);
 
+// Функция для отображения сообщения с анимацией
 function revealMessage() {
     var image = document.querySelector('.image');
     var message = document.getElementById('message');
@@ -43,8 +46,8 @@ function revealMessage() {
 var greetingLink = document.getElementById('greeting-link');
 var futureLink = document.getElementById('future-link');
 
-// Получаем текущий путь страницы
-var currentPath = window.location.pathname;
+// Получаем текущий путь страницы, начиная с корня сайта
+var currentPath = window.location.pathname.split("/").pop();
 
 // Проверяем текущий путь и добавляем класс "active" соответствующему пункту меню
 if (currentPath === '/protected_page.html') {

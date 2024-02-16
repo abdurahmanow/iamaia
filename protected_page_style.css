@@ -22,11 +22,20 @@
     margin: 0 10px;
 }
 
+/* Стили для пунктов меню */
 .menu-link {
     display: block;
     padding: 10px 15px;
     border-radius: 5px;
     text-decoration: none;
+    background-color: #f5eef8; /* Цвет по умолчанию */
+    color: #000000; /* Цвет текста по умолчанию */
+}
+
+/* Стили для активной страницы в меню */
+.active .menu-link {
+    background-color: #ffffff; /* Цвет фона для активной страницы */
+    color: #000000; /* Цвет текста для активной страницы */
 }
 
 /* Стили для тела */

@@ -35,3 +35,18 @@ button:hover {
     margin-top: 20px;
     font-size: 18px;
 }
+
+/* Медиа-запрос для мобильных устройств */
+@media only screen and (max-width: 600px) {
+    .container {
+        margin-top: 50px; /* Уменьшаем отступ сверху для мобильных устройств */
+    }
+
+    input[type="text"] {
+        font-size: 14px; /* Уменьшаем размер шрифта для мобильных устройств */
+    }
+
+    button {
+        font-size: 14px; /* Уменьшаем размер кнопки для мобильных устройств */
+    }
+}

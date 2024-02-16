@@ -5,11 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Защищенная страница</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="protected_page_style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Добро пожаловать на защищенную страницу!</h1>
-        <p>Здесь вы можете увидеть защищенную информацию.</p>
-    </div>
+    <header class="header">
+        <div class="menu-container">
+            <div class="menu-item" id="greeting-link"><a href="protected_page.html" class="menu-link">Поздравление</a></div>
+            <div class="menu-item" id="future-link"><a href="future_wife_page.html" class="menu-link">Для будущей жены</a></div>
+        </div>
+    </header>
+
+    <main class="main">
+        <img src="ramadan_image.jpeg" alt="Ramadan Greeting Image">
+        <div class="content-container">
+            <p>В этом контейнере будет текст, который будет зависеть от его содержимого.</p>
+            <p>Текст может быть произвольной длины, и контейнер будет подстраиваться под него.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <!-- Здесь будет содержаться содержимое подвала -->
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

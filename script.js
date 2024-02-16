@@ -4,7 +4,7 @@ function checkPassword() {
 
     // Проверяем, если поле ввода не пустое
     if (inputDate) {
-        var correctDate = "2005-05-22"; // Укажем правильную дату для доступа
+        var correctDate = "2024-02-15"; // Укажем правильную дату для доступа
 
         // Если введенная дата совпадает с правильной датой
         if (moment(inputDate).format("YYYY-MM-DD") === correctDate) {
@@ -27,3 +27,29 @@ var datepicker = flatpickr("#birthdate", {
 document.querySelector('.flatpickr-button').addEventListener('click', function() {
     datepicker.open();
 });
+
+
+function revealMessage() {
+    var image = document.querySelector('.image');
+    var message = document.getElementById('message');
+
+    // Прячем изображение и отображаем сообщение с анимацией
+    image.style.display = 'none';
+    message.style.display = 'block';
+    message.style.animation = 'typing 3s steps(40) 1s 1 normal both';
+}
+
+// Получаем ссылки на пункты меню
+var greetingLink = document.getElementById('greeting-link');
+var futureLink = document.getElementById('future-link');
+
+// Получаем текущий путь страницы
+var currentPath = window.location.pathname;
+
+// Проверяем текущий путь и добавляем класс "active" соответствующему пункту меню
+if (currentPath === '/protected_page.html') {
+    greetingLink.classList.add('active');
+} else if (currentPath === '/future_wife_page.html') {
+    futureLink.classList.add('active');
+}
+

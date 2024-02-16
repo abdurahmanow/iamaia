@@ -1,0 +1,40 @@
+/* Стили для страницы "Для будущей жены" */
+.content-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.content-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.content-container p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Стили для шапки */
+.header {
+    background-color: #f5eef8;
+    height: 50px;
+    line-height: 50px; /* для вертикального выравнивания содержимого */
+    text-align: center;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+}
+
+.menu-item {
+    margin: 0 10px;
+}
+
+.menu-link {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}

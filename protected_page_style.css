@@ -1,0 +1,62 @@
+/* Общие стили */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+/* Стили для шапки */
+.header {
+    background-color: #f5eef8;
+    height: 50px;
+    line-height: 50px; /* для вертикального выравнивания содержимого */
+    text-align: center;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+}
+
+.menu-item {
+    margin: 0 10px;
+}
+
+.menu-link {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Стили для тела */
+.main {
+    padding: 20px;
+}
+
+.main img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Стили для контейнера под фото */
+.content-container {
+    margin: 15px;
+    padding: 15px;
+    border: 1.5px solid #000000;
+    border-radius: 5px;
+}
+
+/* Стили для текста внутри контейнера */
+.content-container p {
+    margin: 0;
+}
+
+/* Стили для подвала */
+.footer {
+    background-color: #f5eef8;
+    height: 50px;
+    line-height: 50px; /* для вертикального выравнивания содержимого */
+    text-align: center;
+}

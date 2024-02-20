@@ -154,18 +154,12 @@
 /* Медиа-запрос для мобильных устройств */
 @media only screen and (max-width: 768px) {
     .grid-container {
-        grid-template-columns: repeat(2, calc(50% - 7.5px)); /* Два столбца с отступом по 7.5px */
+        grid-template-columns: 1fr; /* Один столбец на мобильных устройствах */
     }
 
     .grid-item {
         margin-bottom: 15px; /* Расстояние между карточками */
-    }
-}
-
-/* Медиа-запрос для устройств с шириной экрана до 768px */
-@media only screen and (max-width: 768px) {
-    .card {
-        width: calc(50% - 10px); /* Ширина карточки (делим на 2 с отступом в 10px) */
+        max-width: calc(50% - 7.5px); /* Максимальная ширина карточки */
     }
 }
 

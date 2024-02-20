@@ -163,6 +163,19 @@
     }
 }
 
+/* Медиа-запрос для мобильных устройств с шириной экрана до 640px */
+@media only screen and (max-width: 640px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr); /* Один столбец на устройствах с шириной экрана до 640px */
+    }
+
+    .grid-item {
+        margin-bottom: 15px; /* Расстояние между карточками */
+        max-width: 100%; /* Максимальная ширина карточки равна ширине экрана */
+    }
+}
+
+
 /* Медиа-запрос для устройств с шириной экрана до 480px */
 @media only screen and (max-width: 480px) {
     .card {

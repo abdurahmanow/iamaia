@@ -152,13 +152,13 @@
 }
 
 /* Медиа-запрос для мобильных устройств */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     .grid-container {
-        justify-content: center; /* Центрируем карточки на мобильных устройствах */
+        grid-template-columns: repeat(2, calc(50% - 7.5px)); /* Два столбца с отступом по 7.5px */
     }
 
-    .card {
-        width: calc(50% - 5px); /* Ширина карточки на мобильном устройстве (делим на 2 с отступом в 5px) */
+    .grid-item {
+        margin-bottom: 15px; /* Расстояние между карточками */
     }
 }
 

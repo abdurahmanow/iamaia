@@ -154,7 +154,7 @@
 /* Медиа-запрос для мобильных устройств */
 @media only screen and (max-width: 768px) {
     .grid-container {
-        grid-template-columns: 1fr; /* Один столбец на мобильных устройствах */
+        grid-template-columns: repeat(2, 1fr); /* Два столбца на мобильных устройствах */
     }
 
     .grid-item {
@@ -174,7 +174,6 @@
         max-width: 100%; /* Максимальная ширина карточки равна ширине экрана */
     }
 }
-
 
 /* Медиа-запрос для устройств с шириной экрана до 480px */
 @media only screen and (max-width: 480px) {

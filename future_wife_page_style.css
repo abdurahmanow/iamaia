@@ -69,25 +69,17 @@
 }
 
 /* Базовые стили для карточек (квадратов) */
-.grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px; /* Расстояние между карточками (теперь 10px) */
-}
-
 .card {
-    width: 200px; /* Измените размеры, если необходимо */
-    height: 200px; /* Измените размеры, если необходимо */
-    background-color: transparent; /* Прозрачный фон карточки */
+    width: 100%; /* Изменено на 100%, чтобы занимать всю доступную ширину */
+    background-color: transparent;
     border-radius: 10px;
-    margin-bottom: 10px; /* Отступ между карточками (теперь 10px) */
-    perspective: 1000px; /* Добавляем перспективу для 3D-эффекта */
-    position: relative; /* Устанавливаем позицию относительно контейнера */
+    margin-bottom: 10px;
+    perspective: 1000px;
+    position: relative;
 }
 
 .card::before {
-    content: attr(data-card-number); /* Добавляем нумерацию карточек */
+    content: attr(data-card-number);
     position: absolute;
     top: 5px;
     right: 5px;
@@ -102,42 +94,43 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    backface-visibility: hidden; /* Скрытие обратной стороны карточки */
+    backface-visibility: hidden;
     border-radius: 10px;
 }
 
 .card-front {
-    background-color: #f5f5f5; /* Цвет фона передней стороны */
-    transform: rotateY(0deg); /* Передняя сторона карточки */
+    background-color: #f5f5f5;
+    transform: rotateY(0deg);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    z-index: 2; /* Устанавливаем индекс слоя для передней стороны */
+    z-index: 2;
 }
 
 .card-back {
-    background-color: #ffffff; /* Цвет фона задней стороны */
-    transform: rotateY(180deg); /* Задняя сторона карточки (начально скрыта) */
+    background-color: #ffffff;
+    transform: rotateY(180deg);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    z-index: 1; /* Устанавливаем индекс слоя для задней стороны */
+    z-index: 1;
 }
 
 .card:hover .card-front {
-    transform: rotateY(-180deg); /* Поворот при наведении мыши */
+    transform: rotateY(-180deg);
 }
 
 .card:hover .card-back {
-    transform: rotateY(0deg); /* Поворот при наведении мыши */
+    transform: rotateY(0deg);
 }
 
 .card img {
-    width: 80%; /* Размер изображения */
-    border-radius: 50%; /* Превращаем изображение в круг */
+    width: 80%;
+    max-width: 100%; /* Добавлено для масштабирования изображения */
+    border-radius: 50%;
     margin-bottom: 10px;
 }
 
@@ -154,30 +147,30 @@
 /* Медиа-запрос для мобильных устройств */
 @media only screen and (max-width: 768px) {
     .grid-container {
-        grid-template-columns: repeat(2, 1fr); /* Два столбца на мобильных устройствах */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .grid-item {
-        margin-bottom: 15px; /* Расстояние между карточками */
-        max-width: calc(50% - 7.5px); /* Максимальная ширина карточки */
+        margin-bottom: 15px;
+        max-width: calc(50% - 7.5px);
     }
 }
 
 /* Медиа-запрос для мобильных устройств с шириной экрана до 640px */
 @media only screen and (max-width: 640px) {
     .grid-container {
-        grid-template-columns: repeat(1, 1fr); /* Один столбец на устройствах с шириной экрана до 640px */
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .grid-item {
-        margin-bottom: 15px; /* Расстояние между карточками */
-        max-width: 100%; /* Максимальная ширина карточки равна ширине экрана */
+        margin-bottom: 15px;
+        max-width: 100%;
     }
 }
 
 /* Медиа-запрос для устройств с шириной экрана до 480px */
 @media only screen and (max-width: 480px) {
     .card {
-        width: calc(100% - 10px); /* Ширина карточки (без отступа снизу) */
+        width: calc(100% - 10px);
     }
 }

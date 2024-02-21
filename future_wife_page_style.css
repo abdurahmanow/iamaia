@@ -89,12 +89,14 @@
     font-size: 20px;
 }
 
-/* Стили для основной сетки в блоках */
+/* Стили для основного контейнера */
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    display: flex;
+    overflow-x: auto; /* Включаем горизонтальную прокрутку */
+    overflow-y: hidden; /* Отключаем вертикальную прокрутку */
+    gap: 10px; /* Расстояние между карточками */
     padding: 20px;
+    white-space: nowrap; /* Карточки остаются в одной строке */
 }
 
 /* Базовые стили для карточек (квадратов) */

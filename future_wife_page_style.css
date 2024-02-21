@@ -60,7 +60,36 @@
     width: 100%;
 }
 
-/* Стили для основной сетки */
+/* Стили для блоков */
+.blocks-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.block {
+    margin-bottom: 20px;
+}
+
+.block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.block-title {
+    font-size: 20px;
+}
+
+.prev-btn,
+.next-btn {
+    background-color: #f5eef8;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Стили для основной сетки в блоках */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -69,19 +98,11 @@
 }
 
 /* Базовые стили для карточек (квадратов) */
-.grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px; /* Расстояние между карточками (теперь 10px) */
-}
-
 .card {
     width: 200px; /* Измените размеры, если необходимо */
     height: 200px; /* Измените размеры, если необходимо */
     background-color: transparent; /* Прозрачный фон карточки */
     border-radius: 10px;
-    margin-bottom: 10px; /* Отступ между карточками (теперь 10px) */
     perspective: 1000px; /* Добавляем перспективу для 3D-эффекта */
     position: relative; /* Устанавливаем позицию относительно контейнера */
 }
@@ -158,9 +179,10 @@
     }
 }
 
+
 /* Медиа-запрос для устройств с шириной экрана до 480px */
 @media only screen and (max-width: 480px) {
-    .card {
-        width: calc(100% - 10px); /* Ширина карточки (без отступа снизу) */
+    .grid-item {
+        max-width: calc(100% - 10px); /* Максимальная ширина карточки равна ширине экрана с учетом расстояния между карточками */
     }
 }

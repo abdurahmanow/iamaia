@@ -28,18 +28,22 @@ document.querySelector('.flatpickr-button').addEventListener('click', function()
     datepicker.open();
 });
 
-// Добавляем обработчик события для кнопки "Открыть"
-document.getElementById('open-button').addEventListener('click', revealMessage);
+// Функция для воспроизведения аудиофайла
+function playAudio(track) {
+    var audio = new Audio(track);
+    audio.play();
+}
 
-// Функция для отображения сообщения с анимацией
-function revealMessage() {
-    var image = document.querySelector('.image');
-    var message = document.getElementById('message');
+// Функция для переворачивания карточки и воспроизведения аудиофайла
+function flipCard(card) {
+    // Код для переворачивания карточки
+    card.classList.toggle('flipped');
 
-    // Прячем изображение и отображаем сообщение с анимацией
-    image.style.display = 'none';
-    message.style.display = 'block';
-    message.style.animation = 'typing 3s steps(40) 1s 1 normal both';
+    // Проверяем, показывается ли задняя сторона карточки
+    if (card.classList.contains('flipped')) {
+        var track = card.querySelector('.card-back').getAttribute('data-track');
+        playAudio(track); // Воспроизводим аудиофайл, соответствующий текущей карточке
+    }
 }
 
 // Получаем ссылки на пункты меню
@@ -56,33 +60,16 @@ if (currentPath === '/protected_page.html') {
     futureLink.classList.add('active');
 }
 
-
 document.addEventListener("DOMContentLoaded", function() {
     const blocks = document.querySelectorAll('.block');
 
     blocks.forEach(block => {
         const cardsContainer = block.querySelector('.grid-container');
-        const prevButton = block.querySelector('.prev-btn');
-        const nextButton = block.querySelector('.next-btn');
 
-        let scrollPosition = 0;
-        let cardWidth = cardsContainer.querySelector('.grid-item').offsetWidth + 10; // Ширина карточки с учетом отступа
-
-        prevButton.addEventListener('click', function() {
-            if (scrollPosition > 0) {
-                scrollPosition -= cardWidth; // Сдвигаем на ширину карточки
-                cardsContainer.scrollTo({
-                    left: scrollPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-
-        nextButton.addEventListener('click', function() {
-            scrollPosition += cardWidth; // Сдвигаем на ширину карточки
-            cardsContainer.scrollTo({
-                left: scrollPosition,
-                behavior: 'smooth'
+        // Добавляем обработчик события для переворачивания карточки и воспроизведения аудиофайла
+        cardsContainer.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function() {
+                flipCard(card);
             });
         });
     });

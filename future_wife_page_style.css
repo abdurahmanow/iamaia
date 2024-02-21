@@ -143,10 +143,25 @@
     background-color: #ffffff; /* Цвет фона задней стороны */
     transform: rotateY(180deg); /* Задняя сторона карточки (начально скрыта) */
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Выравнивание текста к верху карточки */
     justify-content: center;
     text-align: center;
     z-index: 1; /* Устанавливаем индекс слоя для задней стороны */
+    padding: 3px; /* Отступы от краев карточки */
+    box-sizing: border-box; /* Учитываем padding в общей ширине карточки */
+    width: calc(100% - 6px); /* Уменьшаем ширину на 6 пикселей, чтобы учесть отступы */
+    height: calc(100% - 6px); /* Уменьшаем высоту на 6 пикселей, чтобы учесть отступы */
+    word-wrap: break-word; /* Перенос строки при необходимости */
+    overflow-wrap: break-word; /* Альтернативное свойство для переноса строки */
+}
+
+.card-back p {
+    white-space: normal; /* Разрешить перенос строк */
+    text-align: left; /* Выравнивание текста по левому краю */
+    padding: 3px; /* Отступы от краев карточки */
+    box-sizing: border-box; /* Учитываем padding в общей ширине карточки */
+    width: calc(100% - 6px); /* Уменьшаем ширину на 6 пикселей, чтобы учесть отступы */
+    height: calc(100% - 6px); /* Уменьшаем высоту на 6 пикселей, чтобы учесть отступы */
 }
 
 .card:hover .card-front {
@@ -211,6 +226,14 @@
     background-position: center; /* Выравниваем изображение по центру */
 }
 
+/* Стили для аудио на задней стороне карточки */
+.card-back audio {
+    display: none; /* По умолчанию скрываем аудиоэлемент */
+}
+
+.card:hover .card-back audio {
+    display: block; /* Отображаем аудиоэлемент при наведении на карточку */
+}
 
 /* Медиа-запрос для мобильных устройств с шириной экрана до 768px */
 @media only screen and (max-width: 768px) {

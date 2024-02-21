@@ -56,3 +56,34 @@ if (currentPath === '/protected_page.html') {
     futureLink.classList.add('active');
 }
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    const blocks = document.querySelectorAll('.block');
+
+    blocks.forEach(block => {
+        const cardsContainer = block.querySelector('.grid-container');
+        const prevButton = block.querySelector('.prev-btn');
+        const nextButton = block.querySelector('.next-btn');
+
+        let scrollPosition = 0;
+        let cardWidth = cardsContainer.querySelector('.grid-item').offsetWidth + 10; // Ширина карточки с учетом отступа
+
+        prevButton.addEventListener('click', function() {
+            if (scrollPosition > 0) {
+                scrollPosition -= cardWidth; // Сдвигаем на ширину карточки
+                cardsContainer.scrollTo({
+                    left: scrollPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+
+        nextButton.addEventListener('click', function() {
+            scrollPosition += cardWidth; // Сдвигаем на ширину карточки
+            cardsContainer.scrollTo({
+                left: scrollPosition,
+                behavior: 'smooth'
+            });
+        });
+    });
+});

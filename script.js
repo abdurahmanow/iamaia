@@ -1,31 +1,25 @@
-// Функция для проверки даты
 function checkPassword() {
-    var inputDate = document.getElementById("birthdate").value; // Получаем значение из поля ввода
-
-    // Проверяем, если поле ввода не пустое
-    if (inputDate) {
-        var correctDate = "2024-02-15"; // Укажем правильную дату для доступа
-
-        // Если введенная дата совпадает с правильной датой
-        if (moment(inputDate).format("YYYY-MM-DD") === correctDate) {
-            window.location.href = "protected_page.html"; // Перенаправляем на защищенную страницу
-        } else {
-            document.getElementById("message").innerHTML = "Неверная дата рождения!";
-        }
+    var password = document.getElementById("passwordInput").value;
+    // Проверяем пароль
+    if (isValidPassword(password)) {
+        // Если пароль верный, перенаправляем на future_wife_page.html
+        window.location.href = "future_wife_page.html";
     } else {
-        document.getElementById("message").innerHTML = "Пожалуйста, введите дату рождения!";
+        // Если пароль неверный, выводим сообщение об ошибке
+        document.getElementById("message").innerHTML = "Incorrect password. Please try again.";
     }
 }
 
-// Инициализируем flatpickr для поля ввода
-var datepicker = flatpickr("#birthdate", {
-    dateFormat: "Y-m-d", // Формат даты
-    disableMobile: true // Отключаем мобильную версию
-});
+function isValidPassword(password) {
+    // Регулярное выражение для проверки пароля в форматах YYYY.MM.DD, DD.MM.YYYY и YYYY,MM,DD
+    var passwordPattern = /^(?:(?:\d{4}[.,\/]\d{2}[.,\/]\d{2})|(?:\d{2}[.,\/]\d{2}[.,\/]\d{4}))$/;
+    return password === "22.05.2005";
+}
 
-// Добавляем обработчик события для кнопки открытия календаря
-document.querySelector('.flatpickr-button').addEventListener('click', function() {
-    datepicker.open();
+// Добавляем обработчик события submit для формы
+document.querySelector('.form').addEventListener("submit", function(event) {
+    event.preventDefault(); // Предотвращаем стандартное поведение формы
+    checkPassword(); // Вызываем функцию проверки пароля
 });
 
 // Функция для воспроизведения аудиофайла

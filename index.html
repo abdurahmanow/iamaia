@@ -10,12 +10,16 @@
 </head>
 <body>
     <div class="container">
-        <h1>Введите свою дату рождения, чтобы получить доступ к странице:</h1>
-        <!-- Добавляем поле для ввода даты -->
-        <input type="text" id="birthdate" placeholder="Выберите дату" data-input>
-        <!-- Добавляем кнопку для отображения календаря -->
-        <button class="flatpickr-button" type="button" aria-label="toggle" data-toggle>📅</button>
-        <button onclick="checkPassword()">Подтвердить</button>
+        <!-- Вставляем форму из второго кода -->
+        <article class="login">
+            <img src="rose.jpg" />
+            <h3>Welcome back</h3> 
+            <h2>Meryem</h2>
+            <form class="form" onsubmit="event.preventDefault(); checkPassword()">
+                <input type="password" id="passwordInput" placeholder="Enter your passcode" />
+                <button type="submit">Отпраить</button>
+            </form>
+        </article>
         <p id="message"></p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>

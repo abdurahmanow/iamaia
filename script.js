@@ -50,7 +50,7 @@ var currentPath = window.location.pathname.split("/").pop();
 // Проверяем текущий путь и добавляем класс "active" соответствующему пункту меню
 if (currentPath === '/protected_page.html') {
     greetingLink.classList.add('active');
-} else if (currentPath === '/future_wife_page.html') {
+} else if (currentPath === 'heart_page.html') {
     futureLink.classList.add('active');
 }
 

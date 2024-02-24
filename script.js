@@ -3,7 +3,7 @@ function checkPassword() {
     // Проверяем пароль
     if (isValidPassword(password)) {
         // Если пароль верный, перенаправляем на future_wife_page.html
-        window.location.href = "future_wife_page.html";
+        window.location.href = "heart_page.html";
     } else {
         // Если пароль неверный, выводим сообщение об ошибке
         document.getElementById("message").innerHTML = "Incorrect password. Please try again.";

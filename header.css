@@ -1,0 +1,95 @@
+nav {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #121212;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.menu li {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.menu li a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.menu li a:hover {
+    border-bottom: 2px solid transparent;
+}
+
+.menu > li:hover > a {
+    color: #3e95ff;
+}
+
+.menu > li:hover > a::before {
+    visibility: visible;
+    width: 100%;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 120px;
+    background: #3e95ff;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+.submenu a {
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.submenu a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.menu > li > a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3e95ff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu > li:hover > a::before {
+    transform: scaleX(1);
+}
+
+/* Медиа-запросы для адаптивного дизайна шапки */
+@media (max-width: 768px) {
+    nav {
+        height: auto; /* Автоматическая высота навигационной панели для маленьких экранов */
+        background: #1a2027; /* Цвет фона навигационной панели адаптирован к фону body */
+    }
+
+    .menu li a {
+        padding: 10px 15px; /* Уменьшенный отступ для пунктов меню на маленьких экранах */
+    }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Защищенная страница</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем стили для выбора даты -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Вставляем форму из второго кода -->
+        <article class="login">
+            <img src="image/rose.jpg" />
+            <h3>As salamu aleykum</h3> 
+            <h2>Meryem</h2>
+            <form class="form" onsubmit="event.preventDefault(); checkPassword()">
+                <input type="password" id="passwordInput" placeholder="Enter your passcode" />
+                <button type="submit">LOGIN</button>
+            </form>
+        </article>
+        <p id="message"></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,29 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Защищенная страница</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Подключаем стили для выбора даты -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <title>Магазин</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            background-color: #ddd;
+            padding: 10px;
+        }
+        .menu a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .menu a:hover {
+            color: #4CAF50;
+        }
+        .banner {
+            padding: 20px;
+            background-color: #e0e0e0;
+            text-align: center;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+        .product-card button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .checkout {
+            text-align: center;
+            padding: 20px;
+        }
+        .checkout button {
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Вставляем форму из второго кода -->
-        <article class="login">
-            <img src="image/rose.jpg" />
-            <h3>As salamu aleykum</h3> 
-            <h2>Meryem</h2>
-            <form class="form" onsubmit="event.preventDefault(); checkPassword()">
-                <input type="password" id="passwordInput" placeholder="Enter your passcode" />
-                <button type="submit">LOGIN</button>
-            </form>
-        </article>
-        <p id="message"></p>
+    <div class="header">
+        <div class="logo">ЛОГО</div>
+        <div class="cart">Корзина (К)</div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="script.js"></script>
+    <div class="menu">
+        <a href="#all">Все</a>
+        <a href="#coffee">Кофе</a>
+        <a href="#burgers">Бургеры</a>
+        <!-- Добавьте больше категорий по необходимости -->
+    </div>
+    <div class="banner">Баннер</div>
+    <div class="products">
+        <div class="product-card">
+            <img src="product1.jpg" alt="Товар 1">
+            <p>Описание товара 1</p>
+            <button>Заказать</button>
+        </div>
+        <div class="product-card">
+            <img src="product2.jpg" alt="Товар 2">
+            <p>Описание товара 2</p>
+            <button>Заказать</button>
+        </div>
+        <div class="product-card">
+            <img src="product3.jpg" alt="Товар 3">
+            <p>Описание товара 3</p>
+            <button>Заказать</button>
+        </div>
+        <div class="product-card">
+            <img src="product4.jpg" alt="Товар 4">
+            <p>Описание товара 4</p>
+            <button>Заказать</button>
+        </div>
+        <div class="product-card">
+            <img src="product5.jpg" alt="Товар 5">
+            <p>Описание товара 5</p>
+            <button>Заказать</button>
+        </div>
+        <div class="product-card">
+            <img src="product6.jpg" alt="Товар 6">
+            <p>Описание товара 6</p>
+            <button>Заказать</button>
+        </div>
+    </div>
+    <div class="checkout">
+        <button>Оформить</button>
+    </div>
 </body>
 </html>

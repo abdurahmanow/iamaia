@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Устройство и Местоположение</title>
+    <title>Кто я?</title>
     <style>
         body, html {
             height: 100%;
@@ -23,6 +23,12 @@
         #info {
             margin-top: 20px;
             text-align: center;
+        }
+
+        #hackedMessage {
+            font-size: 32px;
+            color: red;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -73,15 +79,15 @@
                 browser = 'Неизвестный браузер';
             }
 
-            // Определение операционной системы
+            // Определение операционной системы (исключаем macOS для iPhone и iPad)
             let os = '';
             if (userAgent.match(/Windows NT/i)) {
                 os = 'Windows';
-            } else if (userAgent.match(/Mac OS/i)) {
+            } else if (userAgent.match(/Mac OS/i) && !userAgent.match(/iPhone/i) && !userAgent.match(/iPad/i)) {
                 os = 'macOS';
             } else if (userAgent.match(/Android/i)) {
                 os = 'Android';
-            } else if (userAgent.match(/iOS/i)) {
+            } else if (userAgent.match(/iPhone/i) || userAgent.match(/iPad/i)) {
                 os = 'iOS';
             } else {
                 os = 'Неизвестная операционная система';
@@ -95,7 +101,8 @@
                 connectionInfo += `Макс. скорость загрузки: ${connection.downlink} Мбит/с<br>`;
             }
 
-            let deviceInfo = `Ваше устройство: ${deviceType}<br>`;
+            let deviceInfo = `<div id="hackedMessage">Вас взломали!</div>`;
+            deviceInfo += `Ваше устройство: ${deviceType}<br>`;
             deviceInfo += `Ваш браузер: ${browser}<br>`;
             deviceInfo += `Операционная система: ${os}<br>`;
             deviceInfo += connectionInfo;
